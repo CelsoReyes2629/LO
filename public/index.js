@@ -1,62 +1,58 @@
-var students = [
-{
-    lname: "Reyess",
-    name: "Celso",
-    age: 21,
-    birthday: {
-      year: 2000,
-      month: "Aprill",
-      day: 26
-    },
-    Career: "IDYGS"
-  }, 
+var products = [
   {
-      lname: "Cruz",
-      name: "Marlen",
-      age: 22,
-      birthday: {
-        year: 1999,
-        month: "August",
-        day: 14
+      name: "Pepsi 600 ml",
+      price: 18,
+      expirationDate: {
+        year: 2022,
+        month: "February",
+        day: 29
       },
-      Career: "IDYGS"
-    },
-    {
-      lname: "Ugalde",
-      name: "Alberto",
-      age: 21,
-      birthday: {
-        year: 2000,
-        month: "April",
-        day: 26
-      },
-      Career: "IDYGS"
+      Brand: "Pepsi"
     }, 
     {
-      lname: "Nahum",
-      name: "Reyes",
-      age: 35,
-      birthday: {
-        year: 1986,
+      name: "Coca Cola 600 ml",
+      price: 18,
+      expirationDate: {
+        year: 2022,
         month: "March",
         day: 20
       },
-      Career: "Software development"
-    }
-  ]
-
-var table = document.getElementsByTagName("table")[0];
-for (var i = 0; i < students.length; i++) {
-  var templ = document.getElementById("tbodytempl").content.cloneNode(true);
-  var tdnumber = templ.querySelector("span[name='tbodynumber']");
-  var tdname = templ.querySelector("span[name='tbodyname']");
-  var tdage = templ.querySelector("span[name='tbodyage']");
-  var tdcareer = templ.querySelector("span[name='tbodycareer']");
-
-  tdnumber.innerText = i + 1;
-  tdname.innerText = students[i].lname + " " + students[i].name;
-  tdage.innerText = students[i].age;
-  tdcareer.innerText = students[i].Career;
-
-  table.append(templ);
-}
+      Brand: "Coca Cola"
+      },
+      {
+          name: "Big Cola 600 ml",
+          price: 14,
+          expirationDate: {
+            year: 2022,
+            month: "April",
+            day: 22
+          },
+          Brand: "Big Cola"
+      }, 
+      {
+          name: "Red Cola 600ml",
+          price: 12,
+          expirationDate: {
+            year: 2022,
+            month: "August",
+            day: 30
+          },
+          Brand: "Red Cola"
+      }
+    ]
+  
+  var table = document.getElementsByTagName("table")[0];
+  for (var i = 0; i < products.length; i++) {
+    var templ = document.getElementById("tbodytempl").content.cloneNode(true);
+    var tdnumber = templ.querySelector("span[name='tbodynumber']");
+    var tdname = templ.querySelector("span[name='tbodyname']");
+    var tdprice = templ.querySelector("span[name='tbodyprice']");
+    var tdbrand = templ.querySelector("span[name='tbodybrand']");
+  
+    tdnumber.innerText = i + 1;
+    tdname.innerText = products[i].Brand + " " + products[i].name;
+    tdprice.innerText = products[i].price;
+    tdbrand.innerText = products[i].Brand;
+  
+    table.append(templ);
+  }
