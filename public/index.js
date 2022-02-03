@@ -1,7 +1,7 @@
 var products = [
   {
       name: "Pepsi 600 ml",
-      price: 18,
+      price: 19,
       expirationDate: {
         year: 2022,
         month: "February",
